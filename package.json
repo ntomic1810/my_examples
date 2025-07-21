@@ -1,0 +1,32 @@
+{
+  "name": "my_examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tests:chrome": "playwright test --config=playwright.config.ts --project=Chromium",
+    "tests:firefox": "playwright test --config=playwright.config.ts --project=Firefox",
+    "tests:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
+    "tests:e2e": "playwright test --config=e2e.config.ts --project=Chromium",
+    "tests: visual: chrome": "playwright test --config=visual.config.ts --project=Chromium", 
+    "tests: visual: frefox": "playwright test --config=visual.config.ts --project=Firefox", 
+    "tests: visual: webkit": "playwright test --config=visual.config.ts --project=Webkit", 
+    "tests: visual: chrome: update": "playwright test --config=visual.config.ts --project=Chromium --update-snapshots", 
+    "tests: visual: frefox: update": "playwright test --config=visual.config.ts --project=Firefox --update-snapshots", 
+    "tests: visual: webkit: update": "playwright test --config=visual.config.ts --project=Webkit --update-snapshots"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntomic1810/my_examples.git"
+  },
+  "author": "natasa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ntomic1810/my_examples/issues"
+  },
+  "homepage": "https://github.com/ntomic1810/my_examples#readme",
+  "dependencies": {
+    "@playwright/test": "^1.53.1",
+    "prettier": "^3.6.0"
+  }
+}
