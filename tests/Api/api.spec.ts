@@ -19,15 +19,15 @@ test.describe.parallel("API Testing", () => {
 
 
 test('GET Request - Get User Detail (JSONPlaceholder)', async ({ request }) => {
-  const baseUrl = 'https://jsonplaceholder.typicode.com';
-  const response = await request.get(`${baseUrl}/users/2`);
+  const baseUrl = 'https://jsonplaceholder.typicode.com'
+  const response = await request.get(`${baseUrl}/users/2`)
   
-  expect(response.status()).toBe(200);
+  expect(response.status()).toBe(200)
 
-  const data = await response.json();
-  expect(data.id).toBe(2);
-  expect(data.name).toBe('Ervin Howell');
-  expect(data.email).toBe('Shanna@melissa.tv');
+  const data = await response.json()
+  expect(data.id).toBe(2)
+  expect(data.name).toBe('Ervin Howell')
+  expect(data.email).toBe('Shanna@melissa.tv')
 })
 
 test('POST Request - Create New Post', async ({ request }) => {
@@ -65,9 +65,9 @@ test('Login via DummyJSON', async ({ request }) => {
     },
   });
 
-  const body = await response.json();
-  console.log('RESPONSE:', body);
-  expect(response.status()).toBe(400);
+  const body = await response.json()
+  console.log('RESPONSE:', body)
+  expect(response.status()).toBe(400)
 });
 
 test('PUT Request - Update Post', async ({ request }) => {
@@ -83,25 +83,25 @@ test('PUT Request - Update Post', async ({ request }) => {
     },
   });
 
-  console.log('STATUS:', response.status());
-  const responseBody = await response.json();
-  console.log('RESPONSE:', responseBody);
+  console.log('STATUS:', response.status())
+  const responseBody = await response.json()
+  console.log('RESPONSE:', responseBody)
 
-  expect(response.status()).toBe(200);
-  expect(responseBody.title).toBe('updated title');
-  expect(responseBody.body).toBe('updated body');
-  expect(responseBody.userId).toBe(1);
-  expect(responseBody.id).toBe(1);
+  expect(response.status()).toBe(200)
+  expect(responseBody.title).toBe('updated title')
+  expect(responseBody.body).toBe('updated body')
+  expect(responseBody.userId).toBe(1)
+  expect(responseBody.id).toBe(1)
 });
 
 test('DELETE Request - Delete Post', async ({ request }) => {
   const response = await request.delete('https://jsonplaceholder.typicode.com/posts/1');
 
-  console.log('STATUS:', response.status());
-  const responseBody = await response.text();
-  console.log('RESPONSE:', responseBody);
+  console.log('STATUS:', response.status())
+  const responseBody = await response.text()
+  console.log('RESPONSE:', responseBody)
 
-  expect([200, 204]).toContain(response.status());
+  expect([200, 204]).toContain(response.status())
   expect(responseBody).toBe('{}')
 })
 })
